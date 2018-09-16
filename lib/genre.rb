@@ -1,4 +1,4 @@
 class Genre
-  attr_accessor :artists
   extend Concerns::Findable
+  attr_accessor :artists
 end
