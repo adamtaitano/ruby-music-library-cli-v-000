@@ -19,17 +19,17 @@ class Song
     genre.songs << self unless genre.songs.include?(self)
   end
  
- def self.all
-  @@all
- end
+   def self.all
+    @@all
+   end
  
- def self.destroy_all
-  @@all.clear
- end
+  def self.destroy_all
+    @@all.clear
+  end
  
- def save
-  @@all << self
- end
+  def save
+    @@all << self
+  end
  
  def self.create(name)
    Song.new(name).tap{ |s| s.save }
