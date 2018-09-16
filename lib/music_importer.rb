@@ -1,4 +1,5 @@
 class MusicImporter
+  attr_reader :path
   @@files = []
   
   def initialize(file_path)
@@ -10,12 +11,11 @@ class MusicImporter
   end
   
   def import
-    @@all.each do |file|
-      Song.new_from_filename(file)
+    files.each do |file|
+      Song.create_from_filename(file)
     end
   end
   
-  attr_reader :path
 
   def initialize(path)
     @path = path
