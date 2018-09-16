@@ -21,4 +21,18 @@ class Song
  def self.create(name)
    Song.new(name).tap{ |s| s.save }
  end
+ 
+ def artist=(artist)
+  @artist = artist
+  artist.songs << self
+ end
+ 
+ def genre=(genre)
+  @genre = genre
+  genre.songs << self
+ end
+ 
+ def self.find_by_name(name)
+  @@all.detect(name) 
+ end
 end
